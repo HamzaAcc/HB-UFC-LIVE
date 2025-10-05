@@ -97,5 +97,8 @@ builder.defineStreamHandler(async ({ id }) => {
 });
 
 // Start the server
-serveHTTP(builder.getInterface(), { port: 7000 });
-console.log("HB UFC Live addon running at http://localhost:7000");
+const port = process.env.PORT || 7000; // Render assigns a port
+serveHTTP(builder.getInterface(), { port });
+console.log(`HB UFC Live addon running at port ${port}`);
+
+
